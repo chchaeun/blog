@@ -4,12 +4,12 @@ import { IProfile } from "../pages";
 import { AiFillGithub } from "react-icons/ai";
 import { MdEmail } from "react-icons/md";
 function SideProfile(props: IProfile) {
-  const { name, description, email, github, instagram, image } = props;
+  const { name, description, email, github, image } = props;
   return (
-    <div className="p-10 fixed top-50 right-0 h-full ">
+    <div className="p-10 fixed top-50 right-0 h-full w-1/5 ">
       <Image
-        className="rounded-full"
-        src="https://avatars.githubusercontent.com/u/85024598?v=4"
+        className="rounded-full w-full"
+        src={image}
         width={200}
         height={200}
         alt="프로필 사진"
