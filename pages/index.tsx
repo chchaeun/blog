@@ -5,11 +5,11 @@ import Link from "next/link";
 import { useState } from "react";
 import SideProfile from "../components/side-profile";
 import { classNames } from "../util/class-name";
-
+import markdownToTxt from "markdown-to-txt";
+import { useRouter } from "next/router";
 export interface IPostData {
   id: string;
   title: string;
-  description: string;
   category: string;
   thumbnail: string;
   tags: string;
@@ -33,6 +33,7 @@ interface IProps {
   allPostsData: IPostData[];
   allTags: ITag[];
   profileData: IProfile;
+  tes: any;
 }
 
 export async function getStaticProps() {
@@ -48,9 +49,12 @@ export async function getStaticProps() {
   };
 }
 const Home = ({ allPostsData, allTags, profileData }: IProps) => {
-  const [tagSelect, setTagSelect] = useState("전체");
-
+  const router = useRouter();
+  const {
+    query: { tag },
+  } = router;
   const getFilteredPosts = (allPostsData: IPostData[]) => {
+    const tagSelect = tag && typeof tag === "string" ? tag : "전체";
     if (tagSelect === "전체") {
       return allPostsData;
     } else {
@@ -60,20 +64,21 @@ const Home = ({ allPostsData, allTags, profileData }: IProps) => {
     }
   };
   const onTagClick = (tagName: string) => {
-    setTagSelect(tagName);
+    router.push(`/?tag=${tagName}`);
   };
   return (
     <div className="flex justify-around gap-10">
       <div className="flex flex-col gap-10 w-2/3 pt-10">
-        <div className="flex gap-2">
+        <div className="flex flex-wrap mr-10 gap-2">
           <span className="font-semibold text-lg">Tags</span>
           {allTags.map((tag: ITag) => (
             <span
               className={classNames(
-                tagSelect === tag.name
+                (!router.query.tag && tag.name === "전체") ||
+                  router.query.tag === tag.name
                   ? "bg-indigo-200 font-medium"
                   : "bg-indigo-50 font-light",
-                "p-1 pl-3 pr-3 rounded-md hover:bg-indigo-200 cursor-pointer"
+                "p-1 pl-3 pr-3 rounded-md hover:bg-indigo-200 cursor-pointer transition ease-in-out duration-200"
               )}
               key={tag.name}
               onClick={() => onTagClick(tag.name)}
@@ -84,13 +89,17 @@ const Home = ({ allPostsData, allTags, profileData }: IProps) => {
         </div>
         <div className="flex flex-col gap-10 pb-20">
           {getFilteredPosts(allPostsData).map((postData: IPostData) => (
-            <Link href={`/${postData.id}`} key={postData.id}>
+            <div key={postData.id}>
               <div className="flex gap-5">
-                <div className="w-2/3 flex flex-col justify-between">
-                  <div>
-                    <h1 className="text-3xl">{postData.title}</h1>
+                <div className="w-3/5 flex flex-col justify-between">
+                  <div className="flex flex-col gap-2">
+                    <Link href={`/${postData.id}`}>
+                      <h1 className="text-3xl hover:underline cursor-pointer">
+                        {postData.title}
+                      </h1>
+                    </Link>
                     <div className="text-lg text-gray-500">
-                      {postData.preview}...
+                      {markdownToTxt(postData.preview)}⋯
                     </div>
                   </div>
                   <div className="text-gray-500">{postData.date}</div>
@@ -98,11 +107,11 @@ const Home = ({ allPostsData, allTags, profileData }: IProps) => {
                 <Image
                   src={postData.thumbnail}
                   alt="포스트 썸네일"
-                  width={180}
+                  width={250}
                   height={180}
                 />
               </div>
-            </Link>
+            </div>
           ))}
         </div>
       </div>
