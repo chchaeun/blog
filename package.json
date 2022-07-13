@@ -2,6 +2,7 @@
   "name": "blog",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://chchaeun.github.io/blog",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
