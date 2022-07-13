@@ -24,7 +24,7 @@ interface IProps {
 }
 export async function getStaticPaths() {
   const categoryInfos = getCategoryInfos();
-  const paths = categoryInfos.map((categoryInfo) => {
+  const paths = categoryInfos.map((categoryInfo: any) => {
     return { params: { cid: categoryInfo.id } };
   });
   return {
@@ -46,9 +46,9 @@ function CategoryPosts({ categoryInfo, postDatas, profileData }: IProps) {
   return (
     <div className="m-auto flex flex-col gap-10 w-2/3 pt-10 dark:text-[#c9d1d9]">
       <div>카테고리</div>
-      <div className="text-4xl font-bold">{categoryInfo.name}</div>
+      <div className="text-4xl font-bold">{categoryInfo?.name}</div>
       <div className="flex flex-col gap-10 pb-20">
-        {postDatas.map((postData: IPostData) => (
+        {postDatas?.map((postData: IPostData) => (
           <div key={postData.id}>
             <div className="flex gap-5">
               <div className="w-3/5 flex flex-col justify-between">
