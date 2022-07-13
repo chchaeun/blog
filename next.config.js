@@ -20,7 +20,7 @@ const nextConfig = {
       "avatars.githubusercontent.com",
     ],
   },
-  assetPrefix: !debug ? `https://chcheun.github.io/blog` : "",
+  assetPrefix: !debug ? `https://chchaeun.github.io/blog` : "",
 };
 
 module.exports = nextConfig;

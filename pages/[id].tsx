@@ -43,7 +43,7 @@ export async function getStaticProps({ params }: IParams) {
 function PostDetail({ postData, detail }: IProps) {
   const router = useRouter();
   const onTagClick = (tag: string) => {
-    router.push(`/?tag=${tag}`);
+    router.push(`/blog/?tag=${tag}`);
   };
   if (!postData) {
     return <div>존재하지 않는 게시글입니다.</div>;

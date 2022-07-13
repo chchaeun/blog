@@ -15,7 +15,7 @@ function Header() {
   return (
     <nav className="flex bg-white sticky top-0 left-0 z-50 justify-between items-center border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10 pr-10 pl-10 dark:bg-[#0d1117] dark:text-[#c9d1d9] dark:border-gray-600">
       <div className="flex justify-start lg:w-0 lg:flex-1">
-        <Link href="/">
+        <Link href="/blog">
           <div className="flex items-center gap-2 cursor-pointer">
             <Image
               src={headerData.icon}
@@ -28,7 +28,7 @@ function Header() {
         </Link>
       </div>
       <div className="flex justify-between gap-10">
-        <Link href="/">
+        <Link href="/blog">
           <button
             className={classNames(
               router.pathname === "/" ? "font-bold " : "font-light",
@@ -38,7 +38,7 @@ function Header() {
             Home
           </button>
         </Link>
-        <Link href="/category">
+        <Link href="/blog/category">
           <button
             className={classNames(
               router.pathname === "/category" ||
@@ -51,7 +51,7 @@ function Header() {
             Category
           </button>
         </Link>
-        <Link href="/about">
+        <Link href="/blog/about">
           <button
             className={classNames(
               router.pathname === "/about" ? "font-bold " : "font-light",
