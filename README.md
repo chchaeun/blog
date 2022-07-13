@@ -105,3 +105,47 @@ image: 프로필 사진
 ```
 
 2. 마크다운으로 소개글을 작성하세요.
+
+## 블로그를 배포하세요!
+
+1. package.json의 homepage를 수정하세요.
+
+```json
+{
+  "homepage": "https://[깃허브 아이디].github.io/blog"
+}
+```
+
+2. env-config.js를 수정하세요.
+
+```javascript
+module.exports = {
+  "process.env.BACKEND_URL": !debug
+    ? "https://[깃허브 아이디].github.io/blog"
+    : "",
+};
+```
+
+3. next-config.js의 assetPrefix를 수정하세요.
+
+```javascript
+const nextConfig = {
+  assetPrefix: !debug ? `https://[깃허브 아이디].github.io/blog` : "",
+};
+```
+
+4. 필요한 모듈을 다운 받으세요.
+
+```bash
+npm install
+
+or
+
+yarn install
+```
+
+5. 블로그를 배포하세요.
+
+```bash
+npm run deploy
+```
