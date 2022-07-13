@@ -63,7 +63,7 @@ const Home = ({ allPostsData, allTags, profileData }: IProps) => {
     }
   };
   const onTagClick = (tagName: string) => {
-    router.push(`/?tag=${tagName}`);
+    router.push(`/blog/?tag=${tagName}`);
   };
   return (
     <div className="flex justify-around gap-10 dark:bg-[#0d1117]  dark:text-[#c9d1d9]">
