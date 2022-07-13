@@ -1,7 +1,6 @@
 /** @type {import('next').NextConfig} */
 
 const debug = process.env.NODE_ENV !== "production";
-const name = "blog";
 
 const nextConfig = {
   reactStrictMode: true,
@@ -13,6 +12,8 @@ const nextConfig = {
     return config;
   },
   images: {
+    loader: "akamai",
+    path: "/",
     domains: [
       "velog.velcdn.com",
       "images.unsplash.com",
