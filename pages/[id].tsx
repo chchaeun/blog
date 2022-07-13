@@ -43,7 +43,7 @@ export async function getStaticProps({ params }: IParams) {
 function PostDetail({ postData, detail }: IProps) {
   const router = useRouter();
   const onTagClick = (tag: string) => {
-    router.push(`/blog/?tag=${tag}`);
+    router.push(`/?tag=${tag}`, `/blog/?tag=${tag}`);
   };
   if (!postData) {
     return <div>존재하지 않는 게시글입니다.</div>;
@@ -59,7 +59,7 @@ function PostDetail({ postData, detail }: IProps) {
           {postData.tags.split(", ").map((tag: string) => (
             <span
               className={
-                "p-1 pl-3 pr-3 rounded-md bg-indigo-100 hover:bg-indigo-200 cursor-pointer transition ease-in-out duration-200"
+                "p-1 pl-3 pr-3 rounded-md bg-indigo-100 hover:bg-indigo-200 cursor-pointer transition ease-in-out duration-200 text-sm"
               }
               key={tag}
               onClick={() => onTagClick(tag)}
@@ -70,7 +70,7 @@ function PostDetail({ postData, detail }: IProps) {
         </div>
       </div>
 
-      <div className="markdown-body" style={{ fontSize: "18px" }}>
+      <div className="markdown-body" style={{ fontSize: "17px" }}>
         <ReactMarkdown
           components={{
             code({ inline, className, children, ...props }) {

@@ -1,9 +1,8 @@
 // env-config.js
 const debug = process.env.NODE_ENV !== "production";
-const name = "blog";
 
 module.exports = {
-  "process.env.BACKEND_URL": !debug ? `/${name}` : "",
+  "process.env.BACKEND_URL": !debug ? "https://chchaeun.github.io/blog" : "",
 };
 
 // .babelrc.js

@@ -11,26 +11,26 @@ function SideProfile(props: IProfile) {
       <Image
         className="rounded-full w-full object-cover"
         src={image}
-        width={200}
-        height={200}
+        width={160}
+        height={160}
         alt="프로필 사진"
       />
       <div className="flex flex-col gap-2 mt-5">
         <span className="text-xl mr-2">{name}</span>
-        <div className="text-base">{description}</div>
+        <div className="text-sm">{description}</div>
         <hr />
         <div className="flex gap-2">
           <a
             href={`https://github.com/${github}`}
             className="hover:underline hover:text-indigo-400"
           >
-            <AiFillGithub size={35} />
+            <AiFillGithub size={27} />
           </a>
           <a
             href={`mailto:${email}`}
             className="hover:underline hover:text-indigo-400"
           >
-            <MdEmail size={35} />
+            <MdEmail size={27} />
           </a>
         </div>
       </div>

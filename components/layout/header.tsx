@@ -13,9 +13,9 @@ function Header() {
   const router = useRouter();
 
   return (
-    <nav className="flex bg-white sticky top-0 left-0 z-50 justify-between items-center border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10 pr-10 pl-10 dark:bg-[#0d1117] dark:text-[#c9d1d9] dark:border-gray-600">
+    <nav className="flex bg-white sticky top-0 left-0 z-50 justify-between items-center border-b-2 border-gray-100 py-4 md:justify-start md:space-x-10 pr-10 pl-10 dark:bg-[#0d1117] dark:text-[#c9d1d9] dark:border-gray-600">
       <div className="flex justify-start lg:w-0 lg:flex-1">
-        <Link href="/blog">
+        <Link href="/" as="/blog">
           <div className="flex items-center gap-2 cursor-pointer">
             <Image
               src={headerData.icon}
@@ -28,34 +28,34 @@ function Header() {
         </Link>
       </div>
       <div className="flex justify-between gap-10">
-        <Link href="/blog">
+        <Link href="/" as="/blog">
           <button
             className={classNames(
               router.pathname === "/" ? "font-bold " : "font-light",
-              "hover:text-indigo-300 text-lg"
+              "hover:text-indigo-300 text-base"
             )}
           >
             Home
           </button>
         </Link>
-        <Link href="/blog/category">
+        <Link href="/category" as="/blog/category">
           <button
             className={classNames(
               router.pathname === "/category" ||
                 router.pathname === "/category/[cid]"
                 ? "font-bold "
                 : "font-light",
-              "hover:text-indigo-300 text-lg"
+              "hover:text-indigo-300 text-base"
             )}
           >
             Category
           </button>
         </Link>
-        <Link href="/blog/about">
+        <Link href="/about" as="/blog/about">
           <button
             className={classNames(
               router.pathname === "/about" ? "font-bold " : "font-light",
-              "hover:text-indigo-300 text-lg"
+              "hover:text-indigo-300 text-base"
             )}
           >
             About

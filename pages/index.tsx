@@ -63,7 +63,7 @@ const Home = ({ allPostsData, allTags, profileData }: IProps) => {
     }
   };
   const onTagClick = (tagName: string) => {
-    router.push(`/blog/?tag=${tagName}`);
+    router.push(`/?tag=${tagName}`, `/blog/?tag=${tag}`);
   };
   return (
     <div className="flex justify-around gap-10 dark:bg-[#0d1117]  dark:text-[#c9d1d9]">
@@ -77,7 +77,7 @@ const Home = ({ allPostsData, allTags, profileData }: IProps) => {
                   router.query.tag === tag.name
                   ? "bg-indigo-200 font-medium"
                   : "bg-indigo-50 font-light",
-                "p-1 pl-3 pr-3 rounded-md hover:bg-indigo-200 cursor-pointer transition ease-in-out duration-200 dark:text-black"
+                "p-1 pl-3 pr-3 rounded-md hover:bg-indigo-200 cursor-pointer transition ease-in-out duration-200 dark:text-black text-sm"
               )}
               key={tag.name}
               onClick={() => onTagClick(tag.name)}
@@ -92,7 +92,7 @@ const Home = ({ allPostsData, allTags, profileData }: IProps) => {
               <div className="flex gap-5">
                 <div className="w-3/5 flex flex-col justify-between">
                   <div className="flex flex-col gap-2">
-                    <Link href={`/blog/${postData.id}`}>
+                    <Link href={`/${postData.id}`} as={`/blog/${postData.id}`}>
                       <h1 className="text-2xl hover:underline cursor-pointer">
                         {postData.title}
                       </h1>
