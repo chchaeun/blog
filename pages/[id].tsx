@@ -49,11 +49,13 @@ function PostDetail({ postData, detail }: IProps) {
     return <div>존재하지 않는 게시글입니다.</div>;
   }
   return (
-    <div className="flex flex-col w-3/5 m-auto mt-20 mb-20 gap-10">
-      <div className="text-6xl font-bold">{postData.title}</div>
+    <div className="flex flex-col w-3/5 m-auto pt-20 pb-20 gap-10 dark:bg-[#0d1117] dark:text-[#c9d1d9]">
+      <div className="text-6xl font-bold ">{postData.title}</div>
       <div className="flex flex-col gap-2">
-        <div className="text-lg text-gray-600">{postData.date}</div>
-        <div className="flex gap-2">
+        <div className="text-lg text-gray-600 dark:text-gray-300">
+          {postData.date}
+        </div>
+        <div className="flex gap-2 dark:text-black">
           {postData.tags.split(", ").map((tag: string) => (
             <span
               className={

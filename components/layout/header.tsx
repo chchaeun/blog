@@ -13,7 +13,7 @@ function Header() {
   const router = useRouter();
 
   return (
-    <nav className="flex bg-white sticky top-0 left-0 z-50 justify-between items-center border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10 pr-10 pl-10">
+    <nav className="flex bg-white sticky top-0 left-0 z-50 justify-between items-center border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10 pr-10 pl-10 dark:bg-[#0d1117] dark:text-[#c9d1d9] dark:border-gray-600">
       <div className="flex justify-start lg:w-0 lg:flex-1">
         <Link href="/">
           <div className="flex items-center gap-2 cursor-pointer">
@@ -41,7 +41,10 @@ function Header() {
         <Link href="/category">
           <button
             className={classNames(
-              router.pathname === "/category" ? "font-bold " : "font-light",
+              router.pathname === "/category" ||
+                router.pathname === "/category/[cid]"
+                ? "font-bold "
+                : "font-light",
               "hover:text-indigo-300 text-xl"
             )}
           >

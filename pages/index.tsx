@@ -33,7 +33,6 @@ interface IProps {
   allPostsData: IPostData[];
   allTags: ITag[];
   profileData: IProfile;
-  tes: any;
 }
 
 export async function getStaticProps() {
@@ -67,7 +66,7 @@ const Home = ({ allPostsData, allTags, profileData }: IProps) => {
     router.push(`/?tag=${tagName}`);
   };
   return (
-    <div className="flex justify-around gap-10">
+    <div className="flex justify-around gap-10 dark:bg-[#0d1117]  dark:text-[#c9d1d9]">
       <div className="flex flex-col gap-10 w-2/3 pt-10">
         <div className="flex flex-wrap mr-10 gap-2">
           <span className="font-semibold text-lg">Tags</span>
@@ -78,7 +77,7 @@ const Home = ({ allPostsData, allTags, profileData }: IProps) => {
                   router.query.tag === tag.name
                   ? "bg-indigo-200 font-medium"
                   : "bg-indigo-50 font-light",
-                "p-1 pl-3 pr-3 rounded-md hover:bg-indigo-200 cursor-pointer transition ease-in-out duration-200"
+                "p-1 pl-3 pr-3 rounded-md hover:bg-indigo-200 cursor-pointer transition ease-in-out duration-200 dark:text-black"
               )}
               key={tag.name}
               onClick={() => onTagClick(tag.name)}
@@ -109,6 +108,7 @@ const Home = ({ allPostsData, allTags, profileData }: IProps) => {
                   alt="포스트 썸네일"
                   width={250}
                   height={180}
+                  className="object-cover"
                 />
               </div>
             </div>

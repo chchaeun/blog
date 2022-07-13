@@ -3,7 +3,9 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { ICategoryInfo } from ".";
-import { IPostData } from "..";
+import { IPostData, IProfile } from "..";
+import SideProfile from "../../components/side-profile";
+import { getProfileData } from "../../lib/blog";
 import {
   getCategoryInfoById,
   getCategoryInfos,
@@ -18,6 +20,7 @@ interface IParams {
 interface IProps {
   categoryInfo: ICategoryInfo;
   postDatas: IPostData[];
+  profileData: IProfile;
 }
 export async function getStaticPaths() {
   const categoryInfos = getCategoryInfos();
@@ -33,16 +36,15 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }: IParams) {
   const categoryInfo = getCategoryInfoById(params.cid);
   const postDatas = getPostsByCategoryId(params.cid);
-
+  const profileData = getProfileData();
   if (!categoryInfo) {
     return { props: {} };
   }
-  return { props: { categoryInfo, postDatas } };
+  return { props: { categoryInfo, postDatas, profileData } };
 }
-function CategoryPosts({ categoryInfo, postDatas }: IProps) {
-  console.log(postDatas);
+function CategoryPosts({ categoryInfo, postDatas, profileData }: IProps) {
   return (
-    <div className="m-auto flex flex-col gap-10 w-2/3 pt-10">
+    <div className="m-auto flex flex-col gap-10 w-2/3 pt-10 dark:text-[#c9d1d9]">
       <div>카테고리</div>
       <div className="text-4xl font-bold">{categoryInfo.name}</div>
       <div className="flex flex-col gap-10 pb-20">
@@ -72,6 +74,7 @@ function CategoryPosts({ categoryInfo, postDatas }: IProps) {
           </div>
         ))}
       </div>
+      <SideProfile {...profileData} />
     </div>
   );
 }
