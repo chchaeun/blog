@@ -7,9 +7,9 @@
 1. header.tsx를 찾으세요.
 
 ```bash
-|--- components
-|   |--- layout
-|   |   |--- header.tsx
+├── components
+│   └── layout
+│       └── header.tsx
 ```
 
 2. headerData를 변경하세요.
@@ -28,9 +28,9 @@ const headerData = {
 1. 카테고리와 \_info.md를 생성하세요. 카테고리 디렉터리 이름은 고유한 값을 가져야 합니다.
 
 ```bash
-|--- _posts
-|   |--- [category 아이디]
-|   |   |--- _info.md
+├── _posts
+│   └── [category 아이디]
+│       └── _info.md
 ```
 
 2. 카테고리 정보를 입력하세요.
@@ -49,10 +49,10 @@ thumbnail: 카테고리 썸네일
 1. 카테고리 안에 포스트를 생성하세요. 포스트 파일 이름은 고유한 값을 가져야 합니다.
 
 ```bash
-|--- _posts
-|   |--- [category 아이디]
-|   |   |--- _info.md
-|   |   |--- [포스트 아이디].md
+├── _posts
+│   └── [category 아이디]
+│       └── _info.md
+│       └── [포스트 아이디].md
 ```
 
 2. 포스트를 작성하세요.
@@ -75,8 +75,8 @@ date: 2022-00-00 00:00
 1. profile.md를 찾으세요.
 
 ```bash
-|--- _blog
-|   |--- profile.md
+├── _blog
+│   └── profile.md
 ```
 
 2. 프로필을 작성하세요.
@@ -98,8 +98,8 @@ image: 프로필 사진
 1. about.md를 찾으세요.
 
 ```bash
-|--- _blog
-|   |--- about.md
+├── _blog
+│   └── about.md
 ```
 
 2. 마크다운으로 소개글을 작성하세요.
