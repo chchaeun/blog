@@ -1,5 +1,7 @@
 # 블로그 사용 설명서
 
+[둘러보기](https://chchaeun.github.io/blog)
+
 ## 블로그 아이콘과 이름을 적용하세요!
 
 <img width="1408" alt="헤더 스크린샷" src="https://user-images.githubusercontent.com/85024598/178765446-0299d97d-6276-46b2-8d0c-a1c4c2eca5d3.png">
