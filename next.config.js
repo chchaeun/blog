@@ -13,7 +13,7 @@ const nextConfig = {
   },
   images: {
     loader: "akamai",
-    path: "/",
+    path: "",
     domains: [
       "velog.velcdn.com",
       "images.unsplash.com",
