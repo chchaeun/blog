@@ -16,8 +16,8 @@ function SideProfile(props: IProfile) {
         alt="프로필 사진"
       />
       <div className="flex flex-col gap-2 mt-5">
-        <span className="text-2xl mr-2">{name}</span>
-        <div className="text-lg">{description}</div>
+        <span className="text-xl mr-2">{name}</span>
+        <div className="text-base">{description}</div>
         <hr />
         <div className="flex gap-2">
           <a

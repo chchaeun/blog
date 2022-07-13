@@ -23,7 +23,7 @@ function Header() {
               height={50}
               alt="블로그 아이콘"
             />
-            <h1 className="text-2xl ">{headerData.blog_name}</h1>
+            <h1 className="text-xl ">{headerData.blog_name}</h1>
           </div>
         </Link>
       </div>
@@ -32,7 +32,7 @@ function Header() {
           <button
             className={classNames(
               router.pathname === "/" ? "font-bold " : "font-light",
-              "hover:text-indigo-300 text-xl"
+              "hover:text-indigo-300 text-lg"
             )}
           >
             Home
@@ -45,7 +45,7 @@ function Header() {
                 router.pathname === "/category/[cid]"
                 ? "font-bold "
                 : "font-light",
-              "hover:text-indigo-300 text-xl"
+              "hover:text-indigo-300 text-lg"
             )}
           >
             Category
@@ -55,7 +55,7 @@ function Header() {
           <button
             className={classNames(
               router.pathname === "/about" ? "font-bold " : "font-light",
-              "hover:text-indigo-300 text-xl"
+              "hover:text-indigo-300 text-lg"
             )}
           >
             About

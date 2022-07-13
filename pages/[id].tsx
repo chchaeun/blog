@@ -50,9 +50,9 @@ function PostDetail({ postData, detail }: IProps) {
   }
   return (
     <div className="flex flex-col w-3/5 m-auto pt-20 pb-20 gap-10 dark:bg-[#0d1117] dark:text-[#c9d1d9]">
-      <div className="text-6xl font-bold ">{postData.title}</div>
+      <div className="text-5xl font-bold ">{postData.title}</div>
       <div className="flex flex-col gap-2">
-        <div className="text-lg text-gray-600 dark:text-gray-300">
+        <div className="text-base text-gray-600 dark:text-gray-300">
           {postData.date}
         </div>
         <div className="flex gap-2 dark:text-black">
@@ -70,7 +70,7 @@ function PostDetail({ postData, detail }: IProps) {
         </div>
       </div>
 
-      <div className="markdown-body" style={{ fontSize: "20px" }}>
+      <div className="markdown-body" style={{ fontSize: "18px" }}>
         <ReactMarkdown
           components={{
             code({ inline, className, children, ...props }) {

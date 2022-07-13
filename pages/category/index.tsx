@@ -31,7 +31,7 @@ function Category({ categoryInfos, profileData }: IProps) {
   return (
     <div className="flex justify-around gap-10 dark:text-[#c9d1d9]">
       <div className="flex flex-col gap-10 w-1/2 mr-20 pt-10 pb-20">
-        <h1 className="text-4xl font-bold">Category</h1>
+        <h1 className="text-3xl font-bold">Category</h1>
         <div className="grid grid-cols-2 gap-8">
           {categoryInfos.map((categoryInfo) => (
             <div
@@ -46,10 +46,10 @@ function Category({ categoryInfos, profileData }: IProps) {
                 alt="카테고리 썸네일"
                 className="object-cover"
               />
-              <div className="text-xl font-semibold pl-2 pt-4">
+              <div className="text-lg font-semibold pl-2 pt-4">
                 {categoryInfo.name}
               </div>
-              <div className="text-lg pl-2 pb-4 text-gray-600 dark:text-gray-400">
+              <div className="text-base pl-2 pb-4 text-gray-600 dark:text-gray-400">
                 {categoryInfo.numberOfPosts}개의 포스트
               </div>
             </div>

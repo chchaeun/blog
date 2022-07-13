@@ -69,7 +69,7 @@ const Home = ({ allPostsData, allTags, profileData }: IProps) => {
     <div className="flex justify-around gap-10 dark:bg-[#0d1117]  dark:text-[#c9d1d9]">
       <div className="flex flex-col gap-10 w-2/3 pt-10">
         <div className="flex flex-wrap mr-10 gap-2">
-          <span className="font-semibold text-lg">Tags</span>
+          <span className="font-semibold text-base">Tags</span>
           {allTags.map((tag: ITag) => (
             <span
               className={classNames(
@@ -86,21 +86,18 @@ const Home = ({ allPostsData, allTags, profileData }: IProps) => {
             </span>
           ))}
         </div>
-        <div className="flex flex-col gap-10 pb-20">
+        <div className="flex flex-col gap-10 pb-20 h-screen">
           {getFilteredPosts(allPostsData).map((postData: IPostData) => (
             <div key={postData.id}>
               <div className="flex gap-5">
                 <div className="w-3/5 flex flex-col justify-between">
                   <div className="flex flex-col gap-2">
-                    <Link
-                      href={`/${postData.id}`}
-                      as={`${process.env.BACKEND_URL}/${postData.id}`}
-                    >
-                      <h1 className="text-3xl hover:underline cursor-pointer">
+                    <Link href={`/blog/${postData.id}`}>
+                      <h1 className="text-2xl hover:underline cursor-pointer">
                         {postData.title}
                       </h1>
                     </Link>
-                    <div className="text-lg text-gray-500">
+                    <div className="text-base text-gray-500">
                       {markdownToTxt(postData.preview)}⋯
                     </div>
                   </div>

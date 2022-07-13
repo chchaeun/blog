@@ -46,7 +46,7 @@ function CategoryPosts({ categoryInfo, postDatas, profileData }: IProps) {
   return (
     <div className="m-auto flex flex-col gap-10 w-2/3 pt-10 dark:text-[#c9d1d9]">
       <div>카테고리</div>
-      <div className="text-4xl font-bold">{categoryInfo?.name}</div>
+      <div className="text-3xl font-bold">{categoryInfo?.name}</div>
       <div className="flex flex-col gap-10 pb-20">
         {postDatas?.map((postData: IPostData) => (
           <div key={postData.id}>
@@ -54,11 +54,11 @@ function CategoryPosts({ categoryInfo, postDatas, profileData }: IProps) {
               <div className="w-3/5 flex flex-col justify-between">
                 <div className="flex flex-col gap-2">
                   <Link href={`/blog/${postData.id}`}>
-                    <h1 className="text-3xl hover:underline cursor-pointer">
+                    <h1 className="text-2xl hover:underline cursor-pointer">
                       {postData.title}
                     </h1>
                   </Link>
-                  <div className="text-lg text-gray-500">
+                  <div className="text-base text-gray-500">
                     {markdownToTxt(postData.preview)}⋯
                   </div>
                 </div>

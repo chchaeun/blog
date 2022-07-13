@@ -14,7 +14,7 @@ function About({ about }: { about: string }) {
     <div className="flex w-2/3 m-auto pt-20 dark:bg-[#0d1117] dark:text-[#c9d1d9]">
       <div
         className="markdown-body"
-        style={{ fontSize: "20px", height: "100vh" }}
+        style={{ fontSize: "18px", height: "100vh" }}
       >
         <ReactMarkdown
           components={{
