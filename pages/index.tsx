@@ -92,7 +92,10 @@ const Home = ({ allPostsData, allTags, profileData }: IProps) => {
               <div className="flex gap-5">
                 <div className="w-3/5 flex flex-col justify-between">
                   <div className="flex flex-col gap-2">
-                    <Link href={`/blog/${postData.id}`}>
+                    <Link
+                      href={`/${postData.id}`}
+                      as={`${process.env.BACKEND_URL}/${postData.id}`}
+                    >
                       <h1 className="text-3xl hover:underline cursor-pointer">
                         {postData.title}
                       </h1>
