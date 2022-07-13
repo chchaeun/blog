@@ -1,4 +1,8 @@
 /** @type {import('next').NextConfig} */
+
+const debug = process.env.NODE_ENV !== "production";
+const name = "blog";
+
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
@@ -15,6 +19,7 @@ const nextConfig = {
       "avatars.githubusercontent.com",
     ],
   },
+  assetPrefix: !debug ? `/${name}/` : "",
 };
 
 module.exports = nextConfig;
