@@ -25,7 +25,7 @@ export async function getStaticProps() {
 function Category({ categoryInfos, profileData }: IProps) {
   const router = useRouter();
   const onCategoryClick = (categoryId: string) => {
-    router.push(`/category/${categoryId}`, `/blog/category/${categoryId}`);
+    router.push(`/category/${categoryId}`);
   };
 
   return (
