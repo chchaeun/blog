@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 
-const debug = process.env.NODE_ENV !== "production";
+const isProd = process.env.NODE_ENV === "production";
 
 const nextConfig = {
   reactStrictMode: true,
@@ -20,7 +20,7 @@ const nextConfig = {
       "avatars.githubusercontent.com",
     ],
   },
-  assetPrefix: !debug ? `https://chchaeun.github.io/blog` : "",
+  basePath: isProd ? "/blog" : "",
 };
 
 module.exports = nextConfig;

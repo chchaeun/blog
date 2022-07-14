@@ -10,6 +10,7 @@ import SyntaxHighlighter from "react-syntax-highlighter";
 import { docco } from "react-syntax-highlighter/dist/cjs/styles/hljs";
 import { useRouter } from "next/router";
 import "github-markdown-css";
+import Utterances from "../components/utterances";
 interface IParams {
   params: {
     id: string;
@@ -43,7 +44,7 @@ export async function getStaticProps({ params }: IParams) {
 function PostDetail({ postData, detail }: IProps) {
   const router = useRouter();
   const onTagClick = (tag: string) => {
-    router.push(`/?tag=${tag}`, `/blog/?tag=${tag}`);
+    router.push(`/?tag=${tag}`);
   };
   if (!postData) {
     return <div>존재하지 않는 게시글입니다.</div>;
@@ -95,6 +96,7 @@ function PostDetail({ postData, detail }: IProps) {
           {detail}
         </ReactMarkdown>
       </div>
+      <Utterances />
     </div>
   );
 }

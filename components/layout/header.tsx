@@ -13,22 +13,22 @@ function Header() {
   const router = useRouter();
 
   return (
-    <nav className="flex bg-white sticky top-0 left-0 z-50 justify-between items-center border-b-2 border-gray-100 py-4 md:justify-start md:space-x-10 pr-10 pl-10 dark:bg-[#0d1117] dark:text-[#c9d1d9] dark:border-gray-600">
+    <nav className="flex bg-white sticky top-0 left-0 z-50 justify-between items-center border-b-2 border-gray-100 py-3 md:justify-start md:space-x-10 pr-10 pl-10 dark:bg-[#0d1117] dark:text-[#c9d1d9] dark:border-gray-600">
       <div className="flex justify-start lg:w-0 lg:flex-1">
-        <Link href="/" as="/blog">
+        <Link href="/">
           <div className="flex items-center gap-2 cursor-pointer">
             <Image
               src={headerData.icon}
-              width={50}
-              height={50}
+              width={40}
+              height={40}
               alt="블로그 아이콘"
             />
-            <h1 className="text-xl ">{headerData.blog_name}</h1>
+            <h1 className="text-lg ">{headerData.blog_name}</h1>
           </div>
         </Link>
       </div>
       <div className="flex justify-between gap-10">
-        <Link href="/" as="/blog">
+        <Link href="/">
           <button
             className={classNames(
               router.pathname === "/" ? "font-bold " : "font-light",
@@ -38,7 +38,7 @@ function Header() {
             Home
           </button>
         </Link>
-        <Link href="/category" as="/blog/category">
+        <Link href="/category">
           <button
             className={classNames(
               router.pathname === "/category" ||
@@ -51,7 +51,7 @@ function Header() {
             Category
           </button>
         </Link>
-        <Link href="/about" as="/blog/about">
+        <Link href="/about">
           <button
             className={classNames(
               router.pathname === "/about" ? "font-bold " : "font-light",
