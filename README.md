@@ -126,15 +126,7 @@ module.exports = {
 };
 ```
 
-3. next-config.js의 assetPrefix를 수정하세요.
-
-```javascript
-const nextConfig = {
-  assetPrefix: !debug ? `https://[깃허브 아이디].github.io/blog` : "",
-};
-```
-
-4. 필요한 모듈을 다운 받으세요.
+3. 필요한 모듈을 다운 받으세요.
 
 ```bash
 npm install
@@ -144,7 +136,7 @@ or
 yarn install
 ```
 
-5. 블로그를 배포하세요.
+4. 블로그를 배포하세요.
 
 ```bash
 npm run deploy
