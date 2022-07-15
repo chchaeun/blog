@@ -7,6 +7,7 @@ const Utterances: React.FC = () => {
         if (!elem) {
           return;
         }
+
         const scriptElem = document.createElement("script");
         scriptElem.src = "https://utteranc.es/client.js";
         scriptElem.async = true;
@@ -15,7 +16,11 @@ const Utterances: React.FC = () => {
         scriptElem.setAttribute("theme", "github-light");
         scriptElem.setAttribute("label", "blog-comment");
         scriptElem.crossOrigin = "anonymous";
-        elem.appendChild(scriptElem);
+
+        const prevScript = document.querySelector("section > script");
+        if (!prevScript) {
+          elem.appendChild(scriptElem);
+        }
       }}
     />
   );
