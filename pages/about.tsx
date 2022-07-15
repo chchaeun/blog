@@ -11,7 +11,7 @@ export async function getStaticProps() {
 }
 function About({ about }: { about: string }) {
   return (
-    <div className="flex w-2/3 m-auto py-20 dark:bg-[#0d1117] dark:text-[#c9d1d9] sm:w-full sm:px-8">
+    <div className="flex w-2/3 m-auto py-20 dark:bg-[#0d1117] dark:text-[#c9d1d9] sm:w-full sm:px-8 sm:py-10">
       <div
         className="markdown-body"
         style={{ fontSize: "18px", height: "100%", width: "100%" }}
