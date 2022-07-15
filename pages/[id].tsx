@@ -11,6 +11,7 @@ import { docco } from "react-syntax-highlighter/dist/cjs/styles/hljs";
 import { useRouter } from "next/router";
 import "github-markdown-css";
 import Utterances from "../components/utterances";
+import ScrollSpy from "../components/scroll-spy";
 interface IParams {
   params: {
     id: string;
@@ -46,12 +47,14 @@ function PostDetail({ postData, detail }: IProps) {
   const onTagClick = (tag: string) => {
     router.push(`/?tag=${tag}`);
   };
+
   if (!postData) {
     return <div>존재하지 않는 게시글입니다.</div>;
   }
   return (
     <div className="flex flex-col w-3/5 m-auto pt-20 pb-20 gap-10 dark:bg-[#0d1117] dark:text-[#c9d1d9]">
-      <div className="text-5xl font-bold ">{postData.title}</div>
+      <ScrollSpy />
+      <div className="text-5xl font-bold">{postData.title}</div>
       <div className="flex flex-col gap-2">
         <div className="text-base text-gray-600 dark:text-gray-300">
           {postData.date}
