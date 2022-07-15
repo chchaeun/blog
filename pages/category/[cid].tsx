@@ -52,7 +52,7 @@ function CategoryPosts({ categoryInfo, postDatas, profileData }: IProps) {
           {postDatas?.map((postData: IPostData) => (
             <div key={postData.id}>
               <div className="flex gap-5 sm:flex-col-reverse">
-                <div className="w-3/5 flex flex-col justify-between">
+                <div className="w-3/5 flex flex-col justify-between sm:w-full">
                   <div className="flex flex-col gap-2">
                     <Link href={`/${postData.id}`}>
                       <h1 className="text-2xl hover:underline cursor-pointer">
