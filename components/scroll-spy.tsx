@@ -52,7 +52,7 @@ function ScrollSpy() {
   return (
     <ul
       id="scroll-spy"
-      className="p-10 fixed top-50 right-0 h-full w-1/5 text-gray-500 dark:text-[#c9d1d9]"
+      className="sm:hidden p-10 fixed top-50 right-0 h-full w-1/5 text-gray-500 dark:text-[#c9d1d9]"
     >
       {sectionsState?.map((section) => (
         <li

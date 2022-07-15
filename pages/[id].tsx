@@ -52,14 +52,14 @@ function PostDetail({ postData, detail }: IProps) {
     return <div>존재하지 않는 게시글입니다.</div>;
   }
   return (
-    <div className="flex flex-col w-3/5 m-auto pt-20 pb-20 gap-10 dark:bg-[#0d1117] dark:text-[#c9d1d9]">
+    <div className="flex flex-col w-3/5 sm:w-5/6 m-auto pt-20 pb-20 gap-10 dark:bg-[#0d1117] dark:text-[#c9d1d9]">
       <ScrollSpy />
       <div className="text-5xl font-bold">{postData.title}</div>
       <div className="flex flex-col gap-2">
         <div className="text-base text-gray-600 dark:text-gray-300">
           {postData.date}
         </div>
-        <div className="flex gap-2 dark:text-black">
+        <div className="flex gap-2 dark:text-black flex-wrap sm:m-0">
           {postData.tags.split(", ").map((tag: string) => (
             <span
               className={
