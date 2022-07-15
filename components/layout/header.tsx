@@ -71,7 +71,7 @@ function Header() {
         <div className="flex flex-col fixed left-0 top-0 bg-white w-full h-screen dark:bg-[#0d1117] dark:bg-opacity-80 p-4 gap-5">
           <MdClose
             onClick={() => setShowMenu(false)}
-            className="lg:hidden text-white"
+            className="lg:hidden"
             size={25}
           />
 
