@@ -4,11 +4,15 @@ import Layout from "../components/layout/layout";
 
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
+import Head from "next/head";
 config.autoAddCss = false;
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <Layout>
+      <Head>
+        <title>개발새발</title>
+      </Head>
       <Component {...pageProps} />
     </Layout>
   );

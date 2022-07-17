@@ -21,6 +21,7 @@
     "lodash": "^4.17.21",
     "markdown-to-txt": "^2.0.1",
     "next": "12.2.2",
+    "package.json": "^0.0.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.4.0",
