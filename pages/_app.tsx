@@ -12,6 +12,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     <Layout>
       <Head>
         <title>개발새발</title>
+        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"></link>
       </Head>
       <Component {...pageProps} />
     </Layout>
