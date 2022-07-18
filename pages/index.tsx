@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useState } from "react";
 import SideProfile from "../components/side-profile";
 import { classNames } from "../util/class-name";
-import markdownToTxt from "markdown-to-txt";
+
 import { useRouter } from "next/router";
 export interface IPostData {
   id: string;
@@ -66,6 +66,7 @@ const Home = ({ allPostsData, allTags, profileData }: IProps) => {
   const onTagClick = (tagName: string) => {
     router.push(`/?tag=${tagName}`);
   };
+
   return (
     <div className="flex justify-around gap-10 sm:gap-0 sm:flex-col-reverse dark:bg-[#0d1117] dark:text-[#c9d1d9] ">
       <>
@@ -98,7 +99,7 @@ const Home = ({ allPostsData, allTags, profileData }: IProps) => {
                         </h1>
                       </Link>
                       <div className="text-base text-gray-500">
-                        {markdownToTxt(postData.preview)}⋯
+                        {postData.preview}⋯
                       </div>
                     </div>
                     <div className="text-gray-500">{postData.date}</div>

@@ -6,6 +6,7 @@ tags: test, hello
 date: 2022-07-11 10:00
 ---
 
+![image](https://user-images.githubusercontent.com/85024598/178406876-090a685d-881e-4933-a8ff-ace7689fb8c1.png)
 This is some text about some stuff that happened sometime ago
 
 # 어쩌고 저쩌고

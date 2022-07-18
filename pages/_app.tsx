@@ -32,6 +32,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <link rel="manifest" href="/blog/assets/site.webmanifest" />
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#ffffff" />
+        <link rel="icon" type="image/x-icon" href="/blog/assets/favicon.ico" />
       </Head>
       <Component {...pageProps} />
     </Layout>
