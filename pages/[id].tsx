@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { IPostData } from ".";
 import {
   getPostDataById,
@@ -47,12 +47,20 @@ export async function getStaticProps({ params }: IParams) {
 
 function PostDetail({ postData, detail }: IProps) {
   const router = useRouter();
+
+  const [isDark, setIsDark] = useState<boolean>();
+
+  useEffect(() => {
+    const dark =
+      window.matchMedia &&
+      window.matchMedia("(prefers-color-scheme: Dark)").matches;
+    setIsDark(dark);
+  }, []);
+
   const onTagClick = (tag: string) => {
     router.push(`/?tag=${tag}`);
   };
-  const isDark =
-    window.matchMedia &&
-    window.matchMedia("(prefers-color-scheme: Dark)").matches;
+
   if (!postData) {
     return <div>존재하지 않는 게시글입니다.</div>;
   }
