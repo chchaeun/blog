@@ -24,4 +24,7 @@ a {
   * {
     background-color: #0d1117;
   }
+  code > * {
+    background-color: transparent;
+  }
 }

@@ -7,7 +7,10 @@ import {
 } from "../lib/posts";
 import ReactMarkdown from "react-markdown";
 import SyntaxHighlighter from "react-syntax-highlighter";
-import { docco } from "react-syntax-highlighter/dist/cjs/styles/hljs";
+import {
+  atomOneLight,
+  atomOneDark,
+} from "react-syntax-highlighter/dist/cjs/styles/hljs";
 import { useRouter } from "next/router";
 import "github-markdown-css";
 import Utterances from "../components/utterances";
@@ -47,7 +50,9 @@ function PostDetail({ postData, detail }: IProps) {
   const onTagClick = (tag: string) => {
     router.push(`/?tag=${tag}`);
   };
-
+  const isDark =
+    window.matchMedia &&
+    window.matchMedia("(prefers-color-scheme: Dark)").matches;
   if (!postData) {
     return <div>존재하지 않는 게시글입니다.</div>;
   }
@@ -84,7 +89,7 @@ function PostDetail({ postData, detail }: IProps) {
                   language={match[1]}
                   PreTag="div"
                   {...props}
-                  style={docco}
+                  style={isDark ? atomOneDark : atomOneLight}
                 >
                   {String(children).replace(/\n$/, "")}
                 </SyntaxHighlighter>
